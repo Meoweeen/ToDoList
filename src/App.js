@@ -31,7 +31,14 @@ function App() {
         </button>
         <div>
           {
-            toDoArray.map(todo => <p>{todo.title}</p>)
+            toDoArray.map(todo => {
+              return (
+                <>
+                  <p>{todo.title}</p>
+                  {/* тут должно выводиться описание */}
+                </>
+              )
+            })
           }
         </div>
       </>
