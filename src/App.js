@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from "react";
 
  function App() {
-  const [toDoTitle, setToDoTitle] = useState(0);
+  const [toDoTitle, setToDoTitle] = useState();
   const [toDoArray, setToDoArray] = useState([]);
-  const [toDoInfo, setToDoInfo] = useState(0);
+  const [toDoInfo, setToDoInfo] = useState();
   
   
   function handleChange(event){
@@ -42,10 +42,10 @@ import { useState } from "react";
             toDoArray.map(todo => {
               return (
                 <>
-                  <table cellSpacing="0" cellPadding="5" >
+                  <table cellSpacing="0" cellPadding="5" className="toDo">
                    <tbody>
                     <tr>
-                     <td  width="200" className="toDo" ><p align="center" >{todo.title}</p><br></br><p className="toDoInfo">{todo.info}</p></td >
+                     <td  width="200"  ><p align="center" >{todo.title}</p><br></br><p className="toDoInfo">{todo.info}</p></td >
                      <td  className="sec"><button className="btn" ></button></td >
                     </tr>
                    </tbody>
