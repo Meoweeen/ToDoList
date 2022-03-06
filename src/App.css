@@ -6,9 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(img/bg.jpg);
-  background-size: cover;
-  
-  
+  background-size: cover;  
 }
 
 code {
@@ -17,76 +15,87 @@ code {
 }
 
 .shadow{
-  position: absolute;
-  left: 40%;
   height: 100vh;
-  width: 25vw;
-  background: rgba(7, 9, 10, 0.7)  
+  width: 25%;
+  background: rgba(7, 9, 10, 0.7);  
+  margin:0 auto;
 }
 
 .core{
-  margin:0 auto;
-  width: 20vw;
+  margin:0 auto 0 auto;
+  width: 82%;
 }
 
 .createToDo{
-  margin:20% 0 2% 0;
+  padding: 50px 0 0 0 ;
 }
 
-.headerCreate{
-  width:20vw;
-  height: 2.5vh;
+.titleCreate{
+  width:100%;
 }
 
 .infoCreate{
-  width:20.2vw;
-  height: 10vh;
+  width:100.6%;
+  height: 90px;
 }
 
 .buttonCreate{
-  width:20.5vw;
+  width:103%;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background-color: rgb(164, 96, 228);
   border:1px solid rgb(78, 74, 82);
 }
 
 .buttonCreate:hover{
-  background-color:rgb(103, 115, 226);
+  background-color:rgb(226, 183, 103);
 }
 
 .toDoList{
   margin:30px 0;
 }
   
-  
-.toDoList p {
-  margin:0;
-  padding:0;
-}
-
 .toDo{
-  background-color: #58a4eb;
-  border: 2px solid #3f5d69;
+  background-color: rgba(162, 73, 184, 0.801);
+  border: 2px solid #0a57fc;
   border-radius: 10px;
   margin: 10px 0px;
-  width:20.5vw;
+  width:100.5%;
+  display: flex;
+  flex-direction: row;
+}
+
+.toDoText{
+  flex:2;
+}
+
+.toDoTitle{
+  text-align: center;
+  margin:0;
+  padding:0;
 }
 
 .toDoInfo{
+  margin:0;
+  padding:0;
   display: none;
 }
 
-.sec {
-  margin:0;
-  padding:0;
-  height: 100%;
+.toDoButton{
+  align-self:center;
 }
 
-.btn{
+.buttonToDo{
   height:15px;
   width: 15px;
-  margin:0;
+  margin:10px;
   padding:0;
+  background-image:url(img/btn.png);
+  background-size: cover;
+  background-color:#134ef1;
+  border: 1px solid #c55dc091;
 }
 
-
+.buttonToDo:hover{
+  box-shadow:0 0 10px 4px #1350f7;
+  background-color:transparent;
+ }

@@ -15,7 +15,8 @@ function App() {
     setToDoInfo(event.target.value);
   };
        
-  function createToDo() {
+  function createToDo(event) {
+    event.preventDefault();
     const newToDoArray = [...toDoArray]
     newToDoArray.push({
       title: toDoTitle,
@@ -35,9 +36,9 @@ function App() {
             onChange={handleChange}
             value={toDoTitle}
             type="text"
-            className="headerCreate"
+            className="titleCreate"
             placeholder="Title"
-            maxlength="10"
+            maxlength="20"
             required
           />
 
@@ -46,7 +47,7 @@ function App() {
             value={toDoInfo} type="text"
             className="infoCreate"
             placeholder="Description"
-            maxlength="10"
+            maxlength="100"
             required
           />
 
@@ -63,14 +64,15 @@ function App() {
           {
             toDoArray.map(todo => {
               return (
-               <table cellSpacing="0" cellPadding="5" className="toDo">
-                  <tbody>
-                  <tr>
-                    <td  width="200"  ><p align="center" >{todo.title}</p><br></br><p className="toDoInfo">{todo.info}</p></td >
-                    <td  className="sec"><button className="btn" ></button></td >
-                  </tr>
-                  </tbody>
-                </table>
+                <div className="toDo">
+                  <div className="toDoText">
+                    <p className="toDoTitle">{todo.title}</p>
+                    <p className="toDoInfo">{todo.info}</p>
+                  </div>
+                  <div className="toDoButton">
+                    <button className="buttonToDo" ></button>
+                  </div>
+                </div>
               )
             })
           }
