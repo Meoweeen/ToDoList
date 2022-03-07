@@ -15,10 +15,12 @@ code {
 }
 
 .shadow{
-  height: 100vh;
+  height: 100%;
+  min-height: 98.6vh;
   width: 25%;
   background: rgba(7, 9, 10, 0.7);  
   margin:0 auto;
+  padding: 0 0 10px 0;
 }
 
 .core{
@@ -51,14 +53,14 @@ code {
 }
 
 .toDoList{
-  margin:30px 0;
+  margin:30px 0 0 0;
 }
   
 .toDo{
   background-color: rgba(162, 73, 184, 0.801);
   border: 2px solid #0a57fc;
   border-radius: 10px;
-  margin: 10px 0px;
+  margin: 10px 0 0 0px;
   width:100.5%;
   display: flex;
   flex-direction: row;
@@ -66,22 +68,24 @@ code {
 
 .toDoText{
   flex:2;
+  word-break:break-all;
+  width: 160px;  
 }
 
 .toDoTitle{
   text-align: center;
-  margin:0;
-  padding:0;
+  margin:2px 0px 10px 0px;
+  padding-left: 20px;
 }
 
 .toDoInfo{
   margin:0;
-  padding:0;
-  display: none;
+  padding-left: 20px;
+  
 }
 
 .toDoButton{
-  align-self:center;
+  
 }
 
 .buttonToDo{

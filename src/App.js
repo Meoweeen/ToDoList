@@ -47,7 +47,7 @@ function App() {
             value={toDoInfo} type="text"
             className="infoCreate"
             placeholder="Description"
-            maxlength="100"
+            maxlength="1000"
             required
           />
 
