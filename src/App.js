@@ -63,7 +63,7 @@ function App() {
         
         <div className="toDoList" >
           {
-            toDoArray.map(todo => ToDo(todo))
+            toDoArray.map(todo =>  <ToDo elem={todo} />)
           }
         </div>
       </div>

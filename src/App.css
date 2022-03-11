@@ -104,9 +104,8 @@ code {
 .buttonToDo:hover{
   box-shadow:0 0 10px 4px #1350f7;
   background-color:transparent;
- }
+}
 
- .toDoButton.open .buttonToDo{
+.buttonToDo .open{
   background-image:url(img/btnreverse.png);
-  
 }
