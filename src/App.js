@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from "react";
+import ToDo from "./ToDo";
 
 function App() {
   const [toDoTitle, setToDoTitle] = useState();
   const [toDoArray, setToDoArray] = useState([]);
   const [toDoInfo, setToDoInfo] = useState();
-  
   
   function handleChange(event){
     setToDoTitle(event.target.value);
@@ -14,7 +14,7 @@ function App() {
   function handleChangeForInfo(event){
     setToDoInfo(event.target.value);
   };
-       
+
   function createToDo(event) {
     event.preventDefault();
     const newToDoArray = [...toDoArray]
@@ -38,16 +38,17 @@ function App() {
             type="text"
             className="titleCreate"
             placeholder="Title"
-            maxlength="20"
+            maxLength="20"
             required
           />
 
           <textarea
             onChange={handleChangeForInfo}
-            value={toDoInfo} type="text"
+            value={toDoInfo} 
+            type="text"
             className="infoCreate"
             placeholder="Description"
-            maxlength="1000"
+            maxLength="1000"
             required
           />
 
@@ -62,24 +63,12 @@ function App() {
         
         <div className="toDoList" >
           {
-            toDoArray.map(todo => {
-              return (
-                <div className="toDo">
-                  <div className="toDoText">
-                    <p className="toDoTitle">{todo.title}</p>
-                    <p className="toDoInfo">{todo.info}</p>
-                  </div>
-                  <div className="toDoButton">
-                    <button className="buttonToDo" ></button>
-                  </div>
-                </div>
-              )
-            })
+            toDoArray.map(todo => ToDo(todo))
           }
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

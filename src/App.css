@@ -81,8 +81,9 @@ code {
 .toDoInfo{
   margin:0;
   padding-left: 20px;
-  
+
 }
+
 
 .toDoButton{
   
@@ -97,9 +98,15 @@ code {
   background-size: cover;
   background-color:#134ef1;
   border: 1px solid #c55dc091;
+  cursor:alias;
 }
 
 .buttonToDo:hover{
   box-shadow:0 0 10px 4px #1350f7;
   background-color:transparent;
  }
+
+ .toDoButton.open .buttonToDo{
+  background-image:url(img/btnreverse.png);
+  
+}
