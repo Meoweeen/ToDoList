@@ -81,9 +81,12 @@ code {
 .toDoInfo{
   margin:0;
   padding-left: 20px;
-
+  display:none;
 }
 
+.toDoInfoOpen{
+  display: block;
+}
 
 .toDoButton{
   
@@ -106,6 +109,6 @@ code {
   background-color:transparent;
 }
 
-.buttonToDo .open{
+.buttonToDoOpen{
   background-image:url(img/btnreverse.png);
 }

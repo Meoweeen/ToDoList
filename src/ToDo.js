@@ -2,25 +2,13 @@ import React from 'react';
 import { useState } from "react";
 
 function ToDo({elem}){
-
   const [toDoBoolean, setToDoBoolean] = useState(false);
 
   function changeToDoBoolean(){
-
-    
-    function changeBgImg(){
-      const bg = document.getElementsByClassName("buttonToDo");
-      bg.classList.add("open")
-    };
-
     if(toDoBoolean == false){
       setToDoBoolean(true);
-      alert(toDoBoolean);
-      changeBgImg();
     }else{
       setToDoBoolean(false);
-      alert(toDoBoolean);
-      changeBgImg();
     }
   };
   
@@ -28,10 +16,14 @@ function ToDo({elem}){
     <div className="toDo">
     <div className="toDoText">
       <p className="toDoTitle">{elem.title}</p>
-      <p className="toDoInfo">{elem.info}</p>
+      <p className={`toDoInfo ${toDoBoolean && "toDoInfoOpen" } `}>{elem.info}</p>
     </div>
     <div className="toDoButton">
-      <button className="buttonToDo" onClick={changeToDoBoolean} ></button>
+      <button 
+        className={`buttonToDo ${toDoBoolean && "buttonToDoOpen" } `} 
+        onClick={changeToDoBoolean} 
+      >
+      </button>
     </div>
   </div>
   )
