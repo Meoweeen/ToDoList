@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from "react";
 import ToDo from "./ToDo";
+import NavBar from "./NavBar"
+import Snoop from "./Snoop"
 
 function App() {
   const [toDoTitle, setToDoTitle] = useState();
@@ -29,21 +31,8 @@ function App() {
 
   return (
   <>
-    
-    <input type="checkbox" id="nav-toggle" hidden></input>
-    <div className="nav">
-      <label for="nav-toggle" className="nav-toggle" onclick></label>
-      <h2 class="logo"><a href="google.com">qwe</a></h2>
-      <ul>
-        <li><a href="1">Один</a></li>
-        <li><a href="2">Два</a></li>
-        <li><a href="3">Три</a></li>
-        <li><a href="4">Четыре</a></li>
-        <li><a href="5">Пять</a></li>
-        <li><a href="6">Шесть</a></li>
-        <li><a href="7">Семь</a> </li>
-      </ul>
-    </div>
+    <NavBar/>
+    <Snoop/>
 
     <div className="shadow">
       <div className="core">
