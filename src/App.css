@@ -90,10 +90,6 @@ code {
   display: block;
 }
 
-.toDoButton{
-  
-}
-
 .buttonToDo{
   height:15px;
   width: 15px;
@@ -202,6 +198,8 @@ code {
   list-style: none;
 }
 
+/* Так же применяется к тегу <Link> */
+
 .nav > ul > li > a {
   display: inline-block;
   position: relative;
@@ -214,7 +212,7 @@ code {
   
 }
 
-/* Invoices */
+/* Desription */
 
 .crutch{
   display: flex;
@@ -263,14 +261,13 @@ border-radius: 25px;
   right: 18px;
   top: -40px;
   padding: 10px;
-  
-  background: #149b14;
+  background: #14ad14;
   color: #eee6e6;
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
   z-index: 9999;
-  transition: color .25s ease-in-out;
+ 
 }
 
 .SnoopToggle:after {
@@ -278,14 +275,12 @@ border-radius: 25px;
   text-decoration: none;
 }
 
-.SnoopToggle:hover {
-  color: #f4f4f4;
-}
-
 #nav-toggle {
   position: absolute;
   display: none;
 }
+
+/* кнопка закрыть */
 
 #SnoopToggle:checked ~ .snoop > .SnoopToggle {
   right: 0px;
@@ -293,6 +288,8 @@ border-radius: 25px;
   top: 0px;
   color: black;
 }
+
+/* открытый контейнер */
 
 #SnoopToggle:checked ~ .snoop {
   top: 70%;
@@ -302,42 +299,8 @@ border-radius: 25px;
 
 #SnoopToggle:checked ~ .snoop > .SnoopToggle:after {
   content: '\2715';
-  
 }
 
-.snoop h2 {
-  width: 90%;
-  padding: 0;
-  margin: 10px 0;
-  text-align: center;
-  text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
-  font-size: 30px;
-}
-
-.snoop h2 a {
-  color: #dadada;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.snoop > ul {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.snoop > ul > li > a {
-  display: inline-block;
-  position: relative;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  color: #dadada;
-  width: 100%;
-  text-decoration: none;
-  
-}
 
 
 
