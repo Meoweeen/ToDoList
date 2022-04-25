@@ -1,0 +1,16 @@
+for (var i = 0; i < localStorage.length; i++) {
+    console.log(localStorage.getItem(localStorage.key(i)));
+    setToDoArray(
+      () => {
+        const saved = localStorage.getItem(localStorage.key(i)); // собсна вынимаем тоже с текущего
+        const initialValue = JSON.parse(saved);
+        
+        return initialValue || " ";
+        
+      }
+    );
+  }
+
+
+
+localStorage.setItem(toDoTitle, JSON.stringify(newToDoArray)); // заносим в локал стораж массив с кеем текущего toDoTitle
