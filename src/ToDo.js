@@ -35,15 +35,10 @@ function ToDoForm(){
 
   const [toDoTitle, setToDoTitle] = useState();
   const [toDoInfo, setToDoInfo] = useState();
-  const [toDoArray, setToDoArray] = useState([]); // нихуя не одуплил нахуя тут скобки квадратные,ну типо при рендеринге первом нельзя что бы этот массив был пустой,ок,а с хуя ли нельзя?
+  const [toDoArray1, setToDoArray1] = useState([]);
+  const [toDoArray, setToDoArray] = useState([]); // не тут скобки квадратные,ну типо при рендеринге первом нельзя что бы этот массив был пустой,ок,а с хуя ли нельзя?
 
-  useEffect(
-    () => {for (var i = 0; i < localStorage.length; i++) {
-    console.log(localStorage.getItem(localStorage.key(i)));
-    }
-});
-
-
+  
   
 
   function handleChange(event){
@@ -69,10 +64,19 @@ function ToDoForm(){
     
     setToDoTitle("");
     setToDoInfo("");
-    setToDoArray(newToDoArray);
+    setToDoArray1(newToDoArray)
+    
+
+    for (var i = 0; i < localStorage.length; i++) {
+   console.log(toDoArray1)
+    };
+
   };
 
-
+  useEffect(() => {
+    setToDoArray(toDoArray1);
+  });
+  
 
   return(
     <>
