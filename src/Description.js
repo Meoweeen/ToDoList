@@ -9,11 +9,11 @@ export default function Description() {
       <Snoop/>    
       <div className="crutch">
         <div className="header">
-          <h2>Invoices</h2>
-       </div>
-       <div className="info">
-         Description
-       </div>
+          <h2>Description</h2>
+        </div>
+        <div className="info">
+          Description
+        </div>
       </div>
     </>
   );

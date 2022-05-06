@@ -7,11 +7,6 @@ function ToDoForm(){
   const [toDoTitle, setToDoTitle] = useState();
   const [toDoInfo, setToDoInfo] = useState();
   const [toDoArray, setToDoArray] = useState([]); 
-  
-  useEffect(() => {
-    const savedTodos = localStorage.getItem("array");
-    if (savedTodos) {setToDoArray(JSON.parse(savedTodos));}
-  }, []);
 
   function handleChange(event){
     setToDoTitle(event.target.value);
@@ -34,6 +29,11 @@ function ToDoForm(){
     setToDoArray(ToDoArrayCopy);
   };
 
+  useEffect(() => {
+    const savedTodos = localStorage.getItem("array");
+    if (savedTodos) {setToDoArray(JSON.parse(savedTodos));}
+  }, []);
+  
   return(
     <>
       <form className="createToDo" onSubmit={createToDo}>

@@ -1,20 +1,14 @@
 import { useState } from "react";
 
 export default  function ToDo({elem}){
-    const [toDoBoolean, setToDoBoolean] = useState(false);
+  const [toDoBoolean, setToDoBoolean] = useState(false);
   
-    function changeToDoBoolean(){
-      if(toDoBoolean == false){
-        setToDoBoolean(true);
-      }else{
-        setToDoBoolean(false);
-      }
-    };
+  function changeToDoBoolean(){
+    setToDoBoolean(!toDoBoolean); 
+  };
 
-
-    
-    return (
-      <div className="toDo">
+  return (
+    <div className="toDo">
       <div className="toDoText">
         <p className="toDoTitle">{elem.title}</p>
         <p className={`toDoInfo ${toDoBoolean && "toDoInfoOpen" } `}>{elem.info}</p>
@@ -27,5 +21,5 @@ export default  function ToDo({elem}){
         </button>
       </div>
     </div>
-    )
-  };
+  )
+};

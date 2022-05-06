@@ -17,8 +17,8 @@ code {
 /* Затемнение заднего фона */
 
 .shadow{
-  height: 100%;
-  min-height: 98.6vh;
+  
+  height: 98.5vh;
   width: 25%;
   background: rgba(7, 9, 10, 0.7);  
   margin:0 auto;
@@ -108,7 +108,7 @@ code {
 }
 
 .buttonToDoOpen{
-  background-image:url(img/btnreverse.png);
+  transform: rotate(0.5turn);
 }
 
 /* NavBar */
@@ -228,7 +228,7 @@ border-radius: 25px;
 }
 
 .info{
-  background-color: #ebfcc3f8;
+  background-color: #ebfcc3d5;
   margin:10px 30px;
   border-radius: 25px;
   height: 75vh;

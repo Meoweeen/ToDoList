@@ -5,15 +5,15 @@ import Snoop from "./Snoop"
 
 function App() {
   return (
-  <>
-    <NavBar/>
-    <Snoop/>
-    <div className="shadow">
-      <div className="core">
-        <ToDoForm/>
+    <>
+      <NavBar/>
+      <Snoop/>
+      <div className="shadow">
+        <div className="core">
+          <ToDoForm/>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
 
