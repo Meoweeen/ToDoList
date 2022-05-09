@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(img/bg.jpg);
   background-size: cover;  
+  box-sizing: border-box;
 }
 
 code {
@@ -18,11 +19,11 @@ code {
 
 .shadow{
   
-  height: 98.5vh;
+  height: 100vh;
   width: 25%;
   background: rgba(7, 9, 10, 0.7);  
   margin:0 auto;
-  padding: 0 0 10px 0;
+  
 }
 
 .core{
@@ -62,39 +63,40 @@ code {
   background-color: rgba(162, 73, 184, 0.801);
   border: 2px solid #0a57fc;
   border-radius: 10px;
-  margin: 10px 0 0 0px;
   width:100.5%;
-  display: flex;
-  flex-direction: row;
+  display: flex;  
 }
 
 .toDoText{
-  flex:2;
+  flex-grow:1;            /* нихуя не понимаю нахуя тут этот флекс */
   word-break:break-all;
-  width: 160px;  
 }
 
 .toDoTitle{
+  display: flex;
   text-align: center;
-  margin:2px 0px 10px 0px;
-  padding-left: 20px;
+  padding:0px;
+  margin:0px;
 }
 
-.toDoInfo{
-  margin:0;
-  padding-left: 20px;
-  display:none;
+
+/* Текст заголовка тудушки */
+
+.titleText{
+  flex-wrap:nowrap;
+  flex-grow:1;
+  margin:0px;
+  padding:0px;
 }
 
-.toDoInfoOpen{
-  display: block;
-}
+/* Кнопка открытия тудушки */
 
 .buttonToDo{
+  flex-wrap:nowrap;
   height:15px;
   width: 15px;
-  margin:10px;
-  padding:0;
+  padding: 0px;
+  margin:4px 0px 0px 4px;
   background-image:url(img/btn.png);
   background-size: cover;
   background-color:#134ef1;
@@ -111,11 +113,32 @@ code {
   transform: rotate(0.5turn);
 }
 
+/* кнопка удаления тудушки */
+
+.deleteToDo{
+  height:15px;
+  width: 15px;
+  flex-wrap:nowrap;
+  margin:4px 4px 0px 0px;
+  border: 1px solid #c55dc091;
+  cursor:alias;
+}
+
+
+.toDoInfo{
+  margin:6px 6px 2px;
+  display:none;
+}
+
+.toDoInfoOpen{
+  display: block;
+}
+
 /* NavBar */
 
 /* контейнер */
 
- .nav {
+.nav {
   width: 320px;
   height: 100%;
   position: fixed;
