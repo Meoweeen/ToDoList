@@ -7,6 +7,7 @@ function ToDoForm(){
   const [toDoTitle, setToDoTitle] = useState();
   const [toDoInfo, setToDoInfo] = useState();
   const [toDoArray, setToDoArray] = useState([]); 
+  const [idToDo, setIdToDo] = useState(1);
 
   function handleChange(event){
     setToDoTitle(event.target.value);
@@ -18,12 +19,15 @@ function ToDoForm(){
 
   function createToDo(event) {
     event.preventDefault();
-    const ToDoArrayCopy = [...toDoArray]
+    const ToDoArrayCopy = [...toDoArray];
     ToDoArrayCopy.push({
+      id: idToDo,
       title: toDoTitle,
-      info: toDoInfo
+      info: toDoInfo,
     });
     localStorage.setItem("array", JSON.stringify(ToDoArrayCopy));
+    setIdToDo(idToDo+1);
+    localStorage.setItem("idToDo", JSON.stringify(idToDo));
     setToDoTitle("");
     setToDoInfo("");
     setToDoArray(ToDoArrayCopy);
@@ -32,6 +36,11 @@ function ToDoForm(){
   useEffect(() => {
     const savedTodos = localStorage.getItem("array");
     if (savedTodos) {setToDoArray(JSON.parse(savedTodos));}
+  }, []);
+
+  useEffect(() => {
+    const idsv = localStorage.getItem("idToDo");
+    if (idsv) {setIdToDo((JSON.parse(idsv))+1);}
   }, []);
   
   return(

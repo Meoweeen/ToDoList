@@ -264,16 +264,11 @@ border-radius: 25px;
 /* контейнер */
 
 .snoop {
- 
   right: 20px;
   position: fixed;
   top: 100%;
-  
   margin: 0;
-  
-  
   transition: top 0.3s;
-
   z-index: 9998;
 }
 
@@ -284,17 +279,19 @@ border-radius: 25px;
   right: 18px;
   top: -40px;
   padding: 10px;
-  background: #14ad14;
+  background-image: url(img/btnSnoop.png);
+  background-size:cover;
+  height:22px;
+  width:22px;
+  transform:rotate(0.5turn);
   color: #eee6e6;
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
   z-index: 9999;
- 
 }
 
 .SnoopToggle:after {
-  content: '\2630';
   text-decoration: none;
 }
 
