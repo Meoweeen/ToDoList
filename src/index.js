@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./App.css";
@@ -12,6 +12,5 @@ ReactDOM.render(
       <Route path="Description" element={<Description />} />
     </Routes>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
