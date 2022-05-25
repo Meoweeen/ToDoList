@@ -35,7 +35,7 @@ export default  function ToDo({elem}){
           </p>
           <button 
             className="deleteToDo" 
-            onClick={deleteToDo}
+            onClick={elem.action}
           >
           </button>
         </p>

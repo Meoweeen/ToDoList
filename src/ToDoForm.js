@@ -33,6 +33,18 @@ function ToDoForm(){
     setToDoArray(ToDoArrayCopy);
   };
 
+  function deleteToDo(elem){
+     
+    let idThis = toDoArray.findIndex(item => item.id == idToDo);
+    toDoArray.splice(idThis,1);
+    localStorage.setItem("array", JSON.stringify(toDoArray));
+    alert(idThis);
+    console.log("12312easdasdsad")
+  }
+
+
+  
+
   useEffect(() => {
     const savedTodos = localStorage.getItem("array");
     if (savedTodos) {setToDoArray(JSON.parse(savedTodos));}
@@ -78,7 +90,7 @@ function ToDoForm(){
 
       <div className="toDoList" >
         {
-         toDoArray.map(todo =>  <ToDoItem elem={todo} />)
+         toDoArray.map(todo =>  <ToDoItem elem={todo} action={deleteToDo} />)
         }
       </div>
     </>
