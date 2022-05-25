@@ -6,100 +6,326 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(img/bg.jpg);
-  background-size: cover;
-  
-  
+  background-size: cover;  
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+   monospace;
 }
 
-.shadow{
+/* Затемнение заднего фона */
 
-  position: absolute;
-  left: 40%;
+.shadow{
+  
   height: 100vh;
-  width: 25vw;
-  background: rgba(7, 9, 10, 0.7);
-  
-  
+  width: 25%;
+  background: rgba(7, 9, 10, 0.7);  
+  margin:0 auto;
   
 }
 
 .core{
-margin:0 auto;
-width: 20vw;
+  margin:0 auto 0 auto;
+  width: 82%;
 }
 
 .createToDo{
-margin:20% 0 2% 0;
-
+  padding: 50px 0 0 0 ;
 }
 
-.headerCreate{
-width:20vw;
-height: 2.5vh;
+.titleCreate{
+  width:100%;
 }
 
 .infoCreate{
-width:20.2vw;
-height: 10vh;
+  width:100.6%;
+  height: 90px;
 }
 
 .buttonCreate{
-width:20.5vw;
-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-background-color: rgb(164, 96, 228);
-border:1px solid rgb(78, 74, 82);
+  width:103%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: rgb(164, 96, 228);
+  border:1px solid rgb(78, 74, 82);
 }
 
 .buttonCreate:hover{
-  background-color:rgb(103, 115, 226);
-
+  background-color:rgb(226, 183, 103);
 }
 
 .toDoList{
-  margin:30px 0;
+  margin:30px 0 0 0;
 }
   
-  
-.toDoList p {
-  margin:0;
-  padding:0;
-
-}
-
 .toDo{
-background-color: #58a4eb;
-border: 2px solid #3f5d69;
-border-radius: 10px;
-margin: 10px 0px;
-
-width:20.5vw;
-
+  background-color: rgba(162, 73, 184, 0.801);
+  border: 2px solid #0a57fc;
+  border-radius: 10px;
+  width:100.5%;
+  display: flex;  
 }
+
+.toDoText{
+  flex-grow:1;            /* нихуя не понимаю нахуя тут этот флекс */
+  word-break:break-all;
+}
+
+.toDoTitle{
+  display: flex;
+  text-align: center;
+  padding:0px;
+  margin:0px;
+}
+
+
+/* Текст заголовка тудушки */
+
+.titleText{
+  flex-wrap:nowrap;
+  flex-grow:1;
+  margin:0px;
+  padding:0px;
+}
+
+/* Кнопка открытия тудушки */
+
+.buttonToDo{
+  flex-wrap:nowrap;
+  height:15px;
+  width: 15px;
+  padding: 0px;
+  margin:4px 0px 0px 4px;
+  background-image:url(img/btn.png);
+  background-size: cover;
+  background-color:#134ef1;
+  border: 1px solid #c55dc091;
+  cursor:alias;
+}
+
+.buttonToDo:hover{
+  box-shadow:0 0 10px 4px #1350f7;
+  background-color:transparent;
+}
+
+.buttonToDoOpen{
+  transform: rotate(0.5turn);
+}
+
+/* кнопка удаления тудушки */
+
+.deleteToDo{
+  height:15px;
+  width: 15px;
+  flex-wrap:nowrap;
+  margin:4px 4px 0px 0px;
+  border: 1px solid #c55dc091;
+  cursor:alias;
+}
+
 
 .toDoInfo{
-display: none;
-
-
+  margin:6px 6px 2px;
+  display:none;
 }
 
-.sec {
-margin:0;
-padding:0;
-height: 100%;
-
-
+.toDoInfoOpen{
+  display: block;
 }
 
-.btn{
-height:15px;
-width: 15px;
-margin:0;
-padding:0;
+/* NavBar */
+
+/* контейнер */
+
+.nav {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  left: -360px;
+  padding: 15px 20px;
+  transition: left 0.3s;
+  background: #16a085;
+  z-index: 9998;
 }
+
+/* переключатель */
+
+.nav-toggle {
+  position: absolute;
+  left: 360px;
+  top: 0;
+  padding: 10px;
+  height: 20px;
+  background: #16a085;
+  color: #eee6e6;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 9999;
+  transition: color .25s ease-in-out;
+}
+
+.nav-toggle:after {
+  content: '\2630';
+  text-decoration: none;
+}
+
+.nav-toggle:hover {
+  color: #f4f4f4;
+}
+
+#nav-toggle {
+  position: absolute;
+  display: none;
+}
+
+#nav-toggle:checked ~ .nav > .nav-toggle {
+  left: auto;
+  right: 2px;
+  top: 1em;
+}
+
+#nav-toggle:checked ~ .nav {
+  left: 0;
+  box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+  overflow-y: auto;
+}
+
+#nav-toggle:checked ~ .nav > .nav-toggle:after {
+  content: '\2715';
+}
+
+.nav h2 {
+  width: 90%;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
+  text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
+  font-size: 30px;
+}
+
+.nav h2 a {
+  color: #dadada;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav > ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Так же применяется к тегу <Link> */
+
+.nav > ul > li > a {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #dadada;
+  width: 100%;
+  text-decoration: none;
+  
+}
+
+/* Desription */
+
+.crutch{
+  display: flex;
+  flex-direction: column;
+  left: 20%;
+}
+
+.header{
+background-color: #a79393c9;
+text-align: center;
+margin:10px 30px ;
+border-radius: 25px;
+}
+
+.info{
+  background-color: #ebfcc3d5;
+  margin:10px 30px;
+  border-radius: 25px;
+  height: 75vh;
+  border: 1px solid #0c080891;
+  padding:8px 8px;
+}
+
+/* Snoop */
+
+/* контейнер */
+
+.snoop {
+  right: 20px;
+  position: fixed;
+  top: 100%;
+  margin: 0;
+  transition: top 0.3s;
+  z-index: 9998;
+}
+
+/* переключатель */
+
+.SnoopToggle {
+  position: absolute;
+  right: 18px;
+  top: -40px;
+  padding: 10px;
+  background-image: url(img/btnSnoop.png);
+  background-size:cover;
+  height:22px;
+  width:22px;
+  transform:rotate(0.5turn);
+  color: #eee6e6;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 9999;
+}
+
+.SnoopToggle:after {
+  text-decoration: none;
+}
+
+#nav-toggle {
+  position: absolute;
+  display: none;
+}
+
+/* кнопка закрыть */
+
+#SnoopToggle:checked ~ .snoop > .SnoopToggle {
+  right: 0px;
+  background: none;
+  top: 0px;
+  color: black;
+}
+
+/* открытый контейнер */
+
+#SnoopToggle:checked ~ .snoop {
+  top: 70%;
+  box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+  overflow-y: auto;
+}
+
+#SnoopToggle:checked ~ .snoop > .SnoopToggle:after {
+  content: '\2715';
+}
+
+
+
+
+
+
+
 
 

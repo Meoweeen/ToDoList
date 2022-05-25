@@ -1,0 +1,12 @@
+const [idTDWT,setIdTDWT] = useState();  //array of IdToDoesWithoutThis
+
+  useEffect(() => {
+    const savedIds = localStorage.getItem("idToDo");
+    if (savedIds) {setIdTDWT(JSON.parse(savedIds));}
+
+  }, []);
+
+
+    idTDWT.splice(idThis,1);
+
+    localStorage.setItem("idToDo", JSON.stringify(idTDWT));
